@@ -1,0 +1,13 @@
+-   Clean up the reader.py script using appropriate limits
+-   Make a global data directory where the files are saved and inputted
+    in the python scripts
+-   Check if file exists before writing it to the directory
+-   Clean up the main function for the csg directory
+-   Write an outfunction for the initialized geodesic wavevectors
+-   Write a proper input function function for CSG directory
+-   Write a slurm script that calls these files
+-   Publish on github
+
+Long term:
+    - OpenMP functionality to the cython script
+    - vtu geodesic reader

@@ -1,0 +1,7 @@
+Building with MPI
+usage: reader.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+   or: reader.py --help [cmd1 cmd2 ...]
+   or: reader.py --help-commands
+   or: reader.py cmd --help
+
+error: invalid command 'inplace'

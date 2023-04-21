@@ -1,0 +1,19 @@
+Building with MPI
+Traceback (most recent call last):
+  File "/home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/reader.py", line 589, in <module>
+    main()
+  File "/home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/reader.py", line 585, in main
+    ReadData()
+  File "/home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/reader.py", line 474, in ReadData
+    BuildCython(MPI_FLAG=1)
+  File "/home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/reader.py", line 32, in BuildCython
+    setup(
+  File "/home/siddhant/anaconda3/envs/zaratan-env/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 172, in setup
+    ok = dist.parse_command_line()
+  File "/home/siddhant/anaconda3/envs/zaratan-env/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 479, in parse_command_line
+    args = self._parse_command_opts(parser, args)
+  File "/home/siddhant/anaconda3/envs/zaratan-env/lib/python3.10/site-packages/setuptools/dist.py", line 1107, in _parse_command_opts
+    nargs = _Distribution._parse_command_opts(self, parser, args)
+  File "/home/siddhant/anaconda3/envs/zaratan-env/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 544, in _parse_command_opts
+    if not issubclass(cmd_class, Command):
+TypeError: issubclass() arg 1 must be a class

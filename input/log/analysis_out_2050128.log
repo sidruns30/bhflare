@@ -1,0 +1,11 @@
+Building with MPI
+running build_ext
+skipping 'pp_c.c' Cython extension (up-to-date)
+Traceback (most recent call last):
+  File "/home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/reader.py", line 589, in <module>
+    main()
+  File "/home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/reader.py", line 585, in main
+    ReadData()
+  File "/home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/reader.py", line 571, in ReadData
+    axes[0,1].pcolormesh(press[:,imid,:], norm=lognorm, cmap="viridis"); axes[0,1].set_title("press")
+NameError: name 'press' is not defined

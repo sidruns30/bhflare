@@ -1,0 +1,39 @@
+Building with MPI
+running build_ext
+skipping 'pp_c.c' Cython extension (up-to-date)
+building 'pp_c' extension
+gcc -pthread -B /home/siddhant/anaconda3/envs/zaratan-env/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/siddhant/anaconda3/envs/zaratan-env/include -fPIC -O2 -isystem /home/siddhant/anaconda3/envs/zaratan-env/include -fPIC -I/home/siddhant/anaconda3/envs/zaratan-env/lib/python3.10/site-packages/numpy/core/include -I/home/siddhant/anaconda3/envs/zaratan-env/include/python3.10 -c functions.c -o build/temp.linux-x86_64-cpython-310/functions.o -fopenmp
+functions.c: In function ‘kernel_rgdump_new’:
+functions.c:57:17: warning: implicit declaration of function ‘access’; did you mean ‘acosl’? [-Wimplicit-function-declaration]
+             if( access(filename1, 0 ) != -1 ) {
+                 ^~~~~~
+                 acosl
+functions.c: In function ‘kernel_rdump_griddata’:
+functions.c:637:10: warning: ‘Rdot_grad’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  #pragma omp parallel
+          ^~~
+functions.c:637:10: warning: ‘uu_rad_grad’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+functions.c:637:10: warning: ‘E_rad_grad’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+functions.c:637:10: warning: ‘B_grad’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+functions.c:637:10: warning: ‘uu_grad’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+functions.c:637:10: warning: ‘ug_grad’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+functions.c:637:10: warning: ‘rho_grad’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+gcc -pthread -B /home/siddhant/anaconda3/envs/zaratan-env/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/siddhant/anaconda3/envs/zaratan-env/include -fPIC -O2 -isystem /home/siddhant/anaconda3/envs/zaratan-env/include -fPIC -I/home/siddhant/anaconda3/envs/zaratan-env/lib/python3.10/site-packages/numpy/core/include -I/home/siddhant/anaconda3/envs/zaratan-env/include/python3.10 -c pp_c.c -o build/temp.linux-x86_64-cpython-310/pp_c.o -fopenmp
+In file included from /home/siddhant/anaconda3/envs/zaratan-env/lib/python3.10/site-packages/numpy/core/include/numpy/ndarraytypes.h:1969,
+                 from /home/siddhant/anaconda3/envs/zaratan-env/lib/python3.10/site-packages/numpy/core/include/numpy/ndarrayobject.h:12,
+                 from /home/siddhant/anaconda3/envs/zaratan-env/lib/python3.10/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from pp_c.c:746:
+/home/siddhant/anaconda3/envs/zaratan-env/lib/python3.10/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning "Using deprecated NumPy API, disable it with " "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+ #warning "Using deprecated NumPy API, disable it with " \
+  ^~~~~~~
+gcc -pthread -B /home/siddhant/anaconda3/envs/zaratan-env/compiler_compat -shared -Wl,--allow-shlib-undefined -Wl,-rpath,/home/siddhant/anaconda3/envs/zaratan-env/lib -Wl,-rpath-link,/home/siddhant/anaconda3/envs/zaratan-env/lib -L/home/siddhant/anaconda3/envs/zaratan-env/lib -Wl,--allow-shlib-undefined -Wl,-rpath,/home/siddhant/anaconda3/envs/zaratan-env/lib -Wl,-rpath-link,/home/siddhant/anaconda3/envs/zaratan-env/lib -L/home/siddhant/anaconda3/envs/zaratan-env/lib build/temp.linux-x86_64-cpython-310/functions.o build/temp.linux-x86_64-cpython-310/pp_c.o -o /home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/pp_c.cpython-310-x86_64-linux-gnu.so "-O3 -fopenmp"
+Traceback (most recent call last):
+  File "/home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/reader.py", line 589, in <module>
+    main()
+  File "/home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/reader.py", line 585, in main
+    ReadData()
+  File "/home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/reader.py", line 514, in ReadData
+    RgdumpGriddata(DIR)
+  File "/home/siddhant/bhflare/bart_tools/HAMR_input/bhflare/input/reader.py", line 387, in RgdumpGriddata
+    x1 = np.zeros((1, gridsizex1, gridsizex2, gridsizex3), dtype=mytype, order='C')
+NameError: name 'mytype' is not defined. Did you mean: 'type'?
